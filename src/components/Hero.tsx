@@ -21,35 +21,38 @@ function Hero({ scrollToSection }: HeroProps) {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10">
-        <div className="mb-6 flex justify-center text-slate-400">
-          <div className="flex items-center space-x-2 hover:text-teal-400 transition-colors duration-300">
-            <MapPin size={18} />
-            <span className="text-sm">{t('hero_location')}</span>
+        <div className="mb-8 flex justify-center">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-slate-800/50 backdrop-blur-sm rounded-full border border-slate-700 text-slate-300 hover:border-teal-400/50 transition-all duration-300">
+            <MapPin size={16} />
+            <span className="text-sm font-medium">{t('hero_location')}</span>
           </div>
         </div>
 
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
-          {t('hero_title')}
-        </h1>
+        <div className="mb-6">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 tracking-tight leading-tight">
+            {t('hero_title')}
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-teal-400 mx-auto rounded-full"></div>
+        </div>
 
-        <p className="text-2xl md:text-3xl text-teal-400 font-medium mb-8">
+        <p className="text-2xl md:text-3xl lg:text-4xl text-teal-400 font-bold mb-4">
           {t('hero_subtitle')}
         </p>
 
-        <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-base md:text-lg text-slate-400 max-w-xl mx-auto mb-12 leading-relaxed font-light">
           {t('hero_description')}
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-20">
           <button
             onClick={() => scrollToSection('services')}
-            className="px-8 py-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-all duration-300 font-medium shadow-lg hover:shadow-teal-500/50 hover:transform hover:scale-105"
+            className="px-8 py-4 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-teal-500/50 hover:transform hover:scale-105 text-base"
           >
             {t('hero_cta_primary')}
           </button>
           <button
             onClick={() => scrollToSection('portfolio')}
-            className="px-8 py-3 bg-slate-800 text-slate-200 rounded-lg hover:bg-slate-700 border-2 border-slate-600 hover:border-teal-400 transition-all duration-300 font-medium"
+            className="px-8 py-4 bg-transparent text-slate-200 rounded-lg hover:bg-slate-800 border-2 border-slate-600 hover:border-teal-400 transition-all duration-300 font-semibold text-base"
           >
             {t('hero_cta_secondary')}
           </button>
@@ -57,9 +60,9 @@ function Hero({ scrollToSection }: HeroProps) {
 
         <button
           onClick={() => scrollToSection('about')}
-          className="animate-bounce text-slate-400 hover:text-teal-400 transition-colors"
+          className="animate-bounce text-slate-500 hover:text-teal-400 transition-colors"
         >
-          <ArrowDown size={32} />
+          <ArrowDown size={28} />
         </button>
       </div>
     </section>
