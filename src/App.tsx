@@ -83,21 +83,21 @@ function App() {
         <Contact />
       </main>
 
-      <footer className="bg-slate-950 border-t border-slate-800 text-white py-8">
+      <footer className="bg-slate-950 border-t border-slate-800 text-white py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <p className="text-slate-400">{t('footer_rights')}</p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+              <p className="text-slate-400 text-sm">{t('footer_rights')}</p>
             </div>
-            <div className="flex space-x-6">
-              <a href="mailto:aradovanovic994@gmail.com" className="text-slate-400 hover:text-teal-400 transition-all duration-300">
-                <Mail size={20} />
+            <div className="flex space-x-8">
+              <a href="mailto:aradovanovic994@gmail.com" className="text-slate-400 hover:text-teal-400 transition-all duration-300" aria-label="Email">
+                <Mail size={22} />
               </a>
-              <a href="https://github.com/ARadovanovic94" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-teal-400 transition-all duration-300">
-                <Github size={20} />
+              <a href="https://github.com/ARadovanovic94" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-teal-400 transition-all duration-300" aria-label="GitHub">
+                <Github size={22} />
               </a>
-              <a href="https://www.linkedin.com/in/aleksandar-radovanovic-02a909333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-teal-400 transition-all duration-300">
-                <Linkedin size={20} />
+              <a href="https://www.linkedin.com/in/aleksandar-radovanovic-02a909333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-teal-400 transition-all duration-300" aria-label="LinkedIn">
+                <Linkedin size={22} />
               </a>
             </div>
           </div>
