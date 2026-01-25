@@ -1,6 +1,9 @@
 import { Award, Users, Target } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-20 bg-slate-800 relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
@@ -12,26 +15,23 @@ function About() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-          About Me
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
+          {t('about_title')}
         </h2>
+        <p className="text-lg text-teal-400 text-center mb-12 font-medium">
+          {t('about_subtitle')}
+        </p>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-slate-300 mb-6 leading-relaxed">
-              I'm a Junior QA Tester with a strong attention to detail and a collaborative mindset.
-              My background as a professional athlete for 15 years has shaped my approach to quality
-              assurance in unique ways.
+              {t('about_p1')}
             </p>
             <p className="text-lg text-slate-300 mb-6 leading-relaxed">
-              The discipline, teamwork, and persistence I developed in sports translate directly into
-              my work in software testing. I bring the same dedication to finding bugs and ensuring
-              quality that I brought to every training session and competition.
+              {t('about_p2')}
             </p>
             <p className="text-lg text-slate-300 leading-relaxed">
-              Currently based in Belgrade, Serbia, I'm fluent in English, German, and Serbian, which
-              allows me to work effectively with international teams and test applications for diverse
-              user bases.
+              {t('about_p3')}
             </p>
           </div>
 
@@ -41,9 +41,9 @@ function About() {
                 <Award className="text-white" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Discipline</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">{t('about_card1_title')}</h3>
                 <p className="text-slate-400">
-                  15 years of athletic training instilled rigorous attention to detail and systematic approach to problem-solving
+                  {t('about_card1_desc')}
                 </p>
               </div>
             </div>
@@ -53,9 +53,9 @@ function About() {
                 <Users className="text-white" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Teamwork</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">{t('about_card2_title')}</h3>
                 <p className="text-slate-400">
-                  Extensive experience collaborating with teams, understanding the importance of clear communication
+                  {t('about_card2_desc')}
                 </p>
               </div>
             </div>
@@ -65,9 +65,9 @@ function About() {
                 <Target className="text-white" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Persistence</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">{t('about_card3_title')}</h3>
                 <p className="text-slate-400">
-                  Never giving up until the job is done right, approaching each test case with determination
+                  {t('about_card3_desc')}
                 </p>
               </div>
             </div>

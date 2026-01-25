@@ -1,10 +1,13 @@
 import { ArrowDown, MapPin } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface HeroProps {
   scrollToSection: (id: string) => void;
 }
 
 function Hero({ scrollToSection }: HeroProps) {
+  const { t } = useLanguage();
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
@@ -21,34 +24,34 @@ function Hero({ scrollToSection }: HeroProps) {
         <div className="mb-6 flex justify-center text-slate-400">
           <div className="flex items-center space-x-2 hover:text-teal-400 transition-colors duration-300">
             <MapPin size={18} />
-            <span className="text-sm">Belgrade, Serbia</span>
+            <span className="text-sm">{t('hero_location')}</span>
           </div>
         </div>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
-          Aleksandar Radovanović
+          {t('hero_title')}
         </h1>
 
         <p className="text-2xl md:text-3xl text-teal-400 font-medium mb-8">
-          Junior QA Tester
+          {t('hero_subtitle')}
         </p>
 
         <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Bringing discipline, teamwork, and attention to detail from 15 years of professional athletics into software quality assurance
+          {t('hero_description')}
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={() => scrollToSection('services')}
             className="px-8 py-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-all duration-300 font-medium shadow-lg hover:shadow-teal-500/50 hover:transform hover:scale-105"
           >
-            Get in Touch
+            {t('hero_cta_primary')}
           </button>
           <button
-            onClick={() => scrollToSection('experience')}
+            onClick={() => scrollToSection('portfolio')}
             className="px-8 py-3 bg-slate-800 text-slate-200 rounded-lg hover:bg-slate-700 border-2 border-slate-600 hover:border-teal-400 transition-all duration-300 font-medium"
           >
-            View My Work
+            {t('hero_cta_secondary')}
           </button>
         </div>
 

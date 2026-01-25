@@ -1,13 +1,15 @@
-import { Menu, X, Mail, Github, Linkedin, MapPin, Languages } from 'lucide-react';
+import { Menu, X, Mail, Github, Linkedin, Globe } from 'lucide-react';
 import { useState } from 'react';
+import { useLanguage } from './context/LanguageContext';
 import Hero from './components/Hero';
 import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
+import Services from './components/Services';
+import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -29,12 +31,19 @@ function App() {
               AR
             </button>
 
-            <div className="hidden md:flex space-x-8">
-              <button onClick={() => scrollToSection('home')} className="nav-link">Home</button>
-              <button onClick={() => scrollToSection('about')} className="nav-link">About</button>
-              <button onClick={() => scrollToSection('skills')} className="nav-link">Skills</button>
-              <button onClick={() => scrollToSection('experience')} className="nav-link">Experience</button>
-              <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
+            <div className="hidden md:flex items-center space-x-8">
+              <button onClick={() => scrollToSection('home')} className="nav-link">{t('nav_home')}</button>
+              <button onClick={() => scrollToSection('about')} className="nav-link">{t('nav_about')}</button>
+              <button onClick={() => scrollToSection('services')} className="nav-link">{t('nav_services')}</button>
+              <button onClick={() => scrollToSection('portfolio')} className="nav-link">{t('nav_portfolio')}</button>
+              <button onClick={() => scrollToSection('contact')} className="nav-link">{t('nav_contact')}</button>
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center space-x-1 text-slate-300 hover:text-teal-400 transition-all duration-300 font-medium"
+              >
+                <Globe size={18} />
+                <span className="text-sm">{language === 'en' ? 'SR' : 'EN'}</span>
+              </button>
             </div>
 
             <button
@@ -49,11 +58,18 @@ function App() {
         {isMenuOpen && (
           <div className="md:hidden bg-slate-900 border-t border-slate-800">
             <div className="px-4 py-4 space-y-3">
-              <button onClick={() => scrollToSection('home')} className="mobile-nav-link">Home</button>
-              <button onClick={() => scrollToSection('about')} className="mobile-nav-link">About</button>
-              <button onClick={() => scrollToSection('skills')} className="mobile-nav-link">Skills</button>
-              <button onClick={() => scrollToSection('experience')} className="mobile-nav-link">Experience</button>
-              <button onClick={() => scrollToSection('contact')} className="mobile-nav-link">Contact</button>
+              <button onClick={() => scrollToSection('home')} className="mobile-nav-link">{t('nav_home')}</button>
+              <button onClick={() => scrollToSection('about')} className="mobile-nav-link">{t('nav_about')}</button>
+              <button onClick={() => scrollToSection('services')} className="mobile-nav-link">{t('nav_services')}</button>
+              <button onClick={() => scrollToSection('portfolio')} className="mobile-nav-link">{t('nav_portfolio')}</button>
+              <button onClick={() => scrollToSection('contact')} className="mobile-nav-link">{t('nav_contact')}</button>
+              <button
+                onClick={toggleLanguage}
+                className="mobile-nav-link flex items-center space-x-2"
+              >
+                <Globe size={18} />
+                <span>{language === 'en' ? 'Srpski' : 'English'}</span>
+              </button>
             </div>
           </div>
         )}
@@ -62,8 +78,8 @@ function App() {
       <main>
         <Hero scrollToSection={scrollToSection} />
         <About />
-        <Skills />
-        <Experience />
+        <Services />
+        <Portfolio />
         <Contact />
       </main>
 
@@ -71,7 +87,7 @@ function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <p className="text-slate-400">© 2024 Aleksandar Radovanović. All rights reserved.</p>
+              <p className="text-slate-400">{t('footer_rights')}</p>
             </div>
             <div className="flex space-x-6">
               <a href="mailto:aradovanovic994@gmail.com" className="text-slate-400 hover:text-teal-400 transition-all duration-300">
