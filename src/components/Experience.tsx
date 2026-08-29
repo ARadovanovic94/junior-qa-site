@@ -1,7 +1,52 @@
-import { Briefcase, HeadphonesIcon, Bug, CheckSquare, MonitorSmartphone, Wrench } from 'lucide-react';
+import { Briefcase, Headphones as HeadphonesIcon, Bug, CheckSquare, MonitorSmartphone, Wrench, Users, MapPin } from 'lucide-react';
+
+interface ExperienceEntry {
+  icon: typeof Briefcase;
+  title: string;
+  company: string;
+  type: string;
+  period?: string;
+  location?: string;
+  isCurrent?: boolean;
+  responsibilities: {
+    icon: typeof Briefcase;
+    text: string;
+  }[];
+}
 
 function Experience() {
-  const experiences = [
+  const experiences: ExperienceEntry[] = [
+    {
+      icon: HeadphonesIcon,
+      title: 'Customer Service & Quality',
+      company: 'GLS Serbia',
+      type: 'Current Position',
+      period: 'May 2026 – Present',
+      location: 'Belgrade, Serbia',
+      isCurrent: true,
+      responsibilities: [
+        {
+          icon: HeadphonesIcon,
+          text: 'Providing customer support for logistics and delivery-related inquiries while maintaining a high level of service quality',
+        },
+        {
+          icon: CheckSquare,
+          text: 'Performing quality checks and reviewing customer interactions against company standards and procedures',
+        },
+        {
+          icon: Bug,
+          text: 'Identifying recurring issues, inconsistencies and areas for improvement',
+        },
+        {
+          icon: MonitorSmartphone,
+          text: 'Analyzing customer cases and support interactions to help improve overall service quality and customer experience',
+        },
+        {
+          icon: Users,
+          text: 'Providing feedback and supporting continuous improvement of internal processes',
+        },
+      ],
+    },
     {
       icon: Briefcase,
       title: 'QA Assistant',
@@ -81,10 +126,26 @@ function Experience() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">{exp.title}</h3>
-                  <p className="text-lg text-teal-400 font-medium mb-3">{exp.company}</p>
-                  <span className="inline-block px-4 py-1.5 bg-teal-500/20 text-teal-400 border border-teal-500/30 rounded-full text-sm font-medium">
-                    {exp.type}
-                  </span>
+                  <p className="text-lg text-teal-400 font-medium mb-2">{exp.company}</p>
+                  {exp.period && (
+                    <p className="text-sm text-slate-400 mb-1">{exp.period}</p>
+                  )}
+                  {exp.location && (
+                    <p className="flex items-center space-x-1.5 text-sm text-slate-400 mb-3">
+                      <MapPin size={14} />
+                      <span>{exp.location}</span>
+                    </p>
+                  )}
+                  <div className="flex items-center space-x-2">
+                    <span className="inline-block px-4 py-1.5 bg-teal-500/20 text-teal-400 border border-teal-500/30 rounded-full text-sm font-medium">
+                      {exp.type}
+                    </span>
+                    {exp.isCurrent && (
+                      <span className="inline-block px-4 py-1.5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-full text-sm font-medium">
+                        Present
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
 

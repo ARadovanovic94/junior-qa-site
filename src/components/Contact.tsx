@@ -46,29 +46,38 @@ function Contact() {
             <h3 className="text-2xl font-bold text-white mb-8 text-center tracking-tight">
               {t('contact_connect_title')}
             </h3>
-            <div className="flex justify-center space-x-8">
-              <a
-                href="https://github.com/ARadovanovic94"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-5 bg-slate-700 rounded-lg hover:bg-teal-500 transition-all duration-300 group transform hover:scale-110"
-              >
-                <Github className="text-slate-300 group-hover:text-white transition-colors" size={32} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/aleksandar-radovanovic-02a909333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-5 bg-slate-700 rounded-lg hover:bg-teal-500 transition-all duration-300 group transform hover:scale-110"
-              >
-                <Linkedin className="text-slate-300 group-hover:text-white transition-colors" size={32} />
-              </a>
-              <a
-                href="mailto:aradovanovic994@gmail.com"
-                className="p-5 bg-slate-700 rounded-lg hover:bg-teal-500 transition-all duration-300 group transform hover:scale-110"
-              >
-                <Mail className="text-slate-300 group-hover:text-white transition-colors" size={32} />
-              </a>
+            <div className="flex justify-center gap-8">
+              <div className="flex flex-col items-center gap-2">
+                <a
+                  href="https://github.com/ARadovanovic94"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-5 bg-slate-700 rounded-lg hover:bg-teal-500 transition-all duration-300 group transform hover:scale-110"
+                >
+                  <Github className="text-slate-300 group-hover:text-white transition-colors" size={32} />
+                </a>
+                <span className="text-xs text-slate-400 font-medium">GitHub – QA Portfolio</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <a
+                  href="https://www.linkedin.com/in/aleksandar-radovanovic-02a909333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-5 bg-slate-700 rounded-lg hover:bg-teal-500 transition-all duration-300 group transform hover:scale-110"
+                >
+                  <Linkedin className="text-slate-300 group-hover:text-white transition-colors" size={32} />
+                </a>
+                <span className="text-xs text-slate-400 font-medium">LinkedIn</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <a
+                  href="mailto:aradovanovic994@gmail.com"
+                  className="p-5 bg-slate-700 rounded-lg hover:bg-teal-500 transition-all duration-300 group transform hover:scale-110"
+                >
+                  <Mail className="text-slate-300 group-hover:text-white transition-colors" size={32} />
+                </a>
+                <span className="text-xs text-slate-400 font-medium">Email</span>
+              </div>
             </div>
           </div>
 
