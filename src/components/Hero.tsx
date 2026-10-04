@@ -1,4 +1,4 @@
-import { ArrowDown, MapPin } from 'lucide-react';
+import { ArrowDown, Github, MapPin } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface HeroProps {
@@ -22,7 +22,7 @@ function Hero({ scrollToSection }: HeroProps) {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10">
         <div className="mb-8 flex justify-center">
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-slate-800/50 backdrop-blur-sm rounded-full border border-slate-700 text-slate-300 hover:border-teal-400/50 transition-all duration-300">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-slate-800/50 backdrop-blur-sm rounded-full border border-slate-700 text-slate-300">
             <MapPin size={16} />
             <span className="text-sm font-medium">{t('hero_location')}</span>
           </div>
@@ -35,32 +35,36 @@ function Hero({ scrollToSection }: HeroProps) {
           <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-teal-400 mx-auto rounded-full"></div>
         </div>
 
-        <p className="text-2xl md:text-3xl lg:text-4xl text-teal-400 font-bold mb-4">
+        <p className="text-2xl md:text-3xl lg:text-4xl text-teal-400 font-bold mb-4 max-w-5xl mx-auto">
           {t('hero_subtitle')}
         </p>
 
-        <p className="text-base md:text-lg text-slate-400 max-w-xl mx-auto mb-12 leading-relaxed font-light">
+        <p className="text-base md:text-lg text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
           {t('hero_description')}
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-20">
           <button
-            onClick={() => scrollToSection('services')}
+            onClick={() => scrollToSection('portfolio')}
             className="px-8 py-4 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-teal-500/50 hover:transform hover:scale-105 text-base"
           >
             {t('hero_cta_primary')}
           </button>
-          <button
-            onClick={() => scrollToSection('portfolio')}
-            className="px-8 py-4 bg-transparent text-slate-200 rounded-lg hover:bg-slate-800 border-2 border-slate-600 hover:border-teal-400 transition-all duration-300 font-semibold text-base"
+          <a
+            href="https://github.com/ARadovanovic94"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-transparent text-slate-200 rounded-lg hover:bg-slate-800 border-2 border-slate-600 hover:border-teal-400 transition-all duration-300 font-semibold text-base"
           >
+            <Github size={19} />
             {t('hero_cta_secondary')}
-          </button>
+          </a>
         </div>
 
         <button
           onClick={() => scrollToSection('about')}
           className="animate-bounce text-slate-500 hover:text-teal-400 transition-colors"
+          aria-label="Scroll to about"
         >
           <ArrowDown size={28} />
         </button>
