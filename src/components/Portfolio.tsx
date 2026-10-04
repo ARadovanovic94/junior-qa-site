@@ -1,11 +1,11 @@
-import { Briefcase, HeadphonesIcon, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Github } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 function Portfolio() {
   const { t } = useLanguage();
 
   return (
-    <section id="portfolio" className="py-20 bg-slate-800 relative overflow-hidden">
+    <section id="portfolio" className="py-24 bg-slate-800 relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <img
           src="https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -24,106 +24,110 @@ function Portfolio() {
           </p>
         </div>
 
-        <div className="space-y-8">
-          <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-lg p-8 card-hover hover:border-teal-400/50 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-start space-x-5 mb-8">
-              <div className="p-3 bg-teal-500 rounded-lg flex-shrink-0">
-                <Briefcase className="text-white" size={28} />
-              </div>
+        <div className="grid lg:grid-cols-2 gap-8">
+          <article className="bg-slate-900/60 border border-slate-700 rounded-xl p-8 card-hover hover:border-teal-400/50 hover:shadow-2xl transition-all duration-300">
+            <div className="flex items-start justify-between gap-4 mb-6">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">{t('portfolio_qa_title')}</h3>
-                <p className="text-lg text-teal-400 font-medium mb-3">{t('portfolio_qa_company')}</p>
-                <span className="inline-block px-4 py-1.5 bg-teal-500/20 text-teal-400 border border-teal-500/30 rounded-full text-sm font-medium">
-                  {t('portfolio_qa_role')}
-                </span>
+                <p className="text-sm text-teal-400 font-semibold mb-2">{t('portfolio_manual_type')}</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{t('portfolio_manual_title')}</h3>
+                <p className="text-slate-400">{t('portfolio_manual_app')}</p>
+              </div>
+              <span className="px-3 py-1 bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 rounded-full text-xs font-semibold">
+                {t('portfolio_completed')}
+              </span>
+            </div>
+
+            <p className="text-slate-300 leading-relaxed mb-6">
+              {t('portfolio_manual_desc')}
+            </p>
+
+            <div className="grid grid-cols-3 gap-3 mb-6">
+              <div className="bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
+                <p className="text-2xl font-bold text-white">8</p>
+                <p className="text-xs text-slate-400">{t('portfolio_test_cases')}</p>
+              </div>
+              <div className="bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
+                <p className="text-2xl font-bold text-white">8</p>
+                <p className="text-xs text-slate-400">{t('portfolio_passed')}</p>
+              </div>
+              <div className="bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
+                <p className="text-2xl font-bold text-white">0</p>
+                <p className="text-xs text-slate-400">{t('portfolio_defects')}</p>
               </div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-slate-800/50 p-5 rounded-lg border border-slate-700">
-                <h4 className="text-teal-400 font-semibold mb-3 text-sm tracking-tight">{t('portfolio_qa_challenge')}</h4>
-                <p className="text-slate-300 text-sm leading-relaxed">{t('portfolio_qa_challenge_text')}</p>
-              </div>
-              <div className="bg-slate-800/50 p-5 rounded-lg border border-slate-700">
-                <h4 className="text-teal-400 font-semibold mb-3 text-sm tracking-tight">{t('portfolio_qa_approach')}</h4>
-                <p className="text-slate-300 text-sm leading-relaxed">{t('portfolio_qa_approach_text')}</p>
-              </div>
-              <div className="bg-slate-800/50 p-5 rounded-lg border border-slate-700">
-                <h4 className="text-teal-400 font-semibold mb-3 text-sm tracking-tight">{t('portfolio_qa_results')}</h4>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={16} />
-                    <span className="text-slate-300 text-sm leading-relaxed">{t('portfolio_qa_result_1')}</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={16} />
-                    <span className="text-slate-300 text-sm leading-relaxed">{t('portfolio_qa_result_2')}</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={16} />
-                    <span className="text-slate-300 text-sm leading-relaxed">{t('portfolio_qa_result_3')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-start gap-3 text-slate-300 text-sm">
+                <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={17} />
+                {t('portfolio_manual_point_1')}
+              </li>
+              <li className="flex items-start gap-3 text-slate-300 text-sm">
+                <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={17} />
+                {t('portfolio_manual_point_2')}
+              </li>
+              <li className="flex items-start gap-3 text-slate-300 text-sm">
+                <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={17} />
+                {t('portfolio_manual_point_3')}
+              </li>
+            </ul>
 
-          <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-lg p-8 card-hover hover:border-teal-400/50 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-start space-x-5 mb-8">
-              <div className="p-3 bg-teal-500 rounded-lg flex-shrink-0">
-                <HeadphonesIcon className="text-white" size={28} />
-              </div>
+            <a
+              href="https://github.com/ARadovanovic94/manual_qa_practice"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 font-semibold"
+            >
+              <Github size={18} />
+              {t('portfolio_view_github')}
+            </a>
+          </article>
+
+          <article className="bg-slate-900/60 border border-slate-700 rounded-xl p-8 card-hover hover:border-teal-400/50 hover:shadow-2xl transition-all duration-300">
+            <div className="flex items-start justify-between gap-4 mb-6">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">{t('portfolio_support_title')}</h3>
-                <p className="text-lg text-teal-400 font-medium mb-3">{t('portfolio_support_company')}</p>
-                <span className="inline-block px-4 py-1.5 bg-teal-500/20 text-teal-400 border border-teal-500/30 rounded-full text-sm font-medium">
-                  {t('portfolio_support_role')}
-                </span>
+                <p className="text-sm text-teal-400 font-semibold mb-2">{t('portfolio_automation_type')}</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{t('portfolio_automation_title')}</h3>
+                <p className="text-slate-400">Python · Selenium WebDriver · pytest</p>
               </div>
+              <span className="px-3 py-1 bg-teal-500/15 text-teal-400 border border-teal-500/30 rounded-full text-xs font-semibold">
+                {t('portfolio_practice')}
+              </span>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-slate-800/50 p-5 rounded-lg border border-slate-700">
-                <h4 className="text-teal-400 font-semibold mb-3 text-sm tracking-tight">{t('portfolio_support_challenge')}</h4>
-                <p className="text-slate-300 text-sm leading-relaxed">{t('portfolio_support_challenge_text')}</p>
-              </div>
-              <div className="bg-slate-800/50 p-5 rounded-lg border border-slate-700">
-                <h4 className="text-teal-400 font-semibold mb-3 text-sm tracking-tight">{t('portfolio_support_approach')}</h4>
-                <p className="text-slate-300 text-sm leading-relaxed">{t('portfolio_support_approach_text')}</p>
-              </div>
-              <div className="bg-slate-800/50 p-5 rounded-lg border border-slate-700">
-                <h4 className="text-teal-400 font-semibold mb-3 text-sm tracking-tight">{t('portfolio_support_results')}</h4>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={16} />
-                    <span className="text-slate-300 text-sm leading-relaxed">{t('portfolio_support_result_1')}</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={16} />
-                    <span className="text-slate-300 text-sm leading-relaxed">{t('portfolio_support_result_2')}</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={16} />
-                    <span className="text-slate-300 text-sm leading-relaxed">{t('portfolio_support_result_3')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+            <p className="text-slate-300 leading-relaxed mb-6">
+              {t('portfolio_automation_desc')}
+            </p>
+
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-start gap-3 text-slate-300 text-sm">
+                <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={17} />
+                {t('portfolio_automation_point_1')}
+              </li>
+              <li className="flex items-start gap-3 text-slate-300 text-sm">
+                <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={17} />
+                {t('portfolio_automation_point_2')}
+              </li>
+              <li className="flex items-start gap-3 text-slate-300 text-sm">
+                <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={17} />
+                {t('portfolio_automation_point_3')}
+              </li>
+            </ul>
+
+            <a
+              href="https://github.com/ARadovanovic94/selenium-tests"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 font-semibold"
+            >
+              <Github size={18} />
+              {t('portfolio_view_github')}
+            </a>
+          </article>
         </div>
 
-        <div className="mt-14 p-10 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-center shadow-xl glow-effect">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">{t('portfolio_cta_title')}</h3>
-          <p className="text-teal-100 mb-8 max-w-2xl mx-auto text-base leading-relaxed">
-            {t('portfolio_cta_desc')}
-          </p>
-          <a
-            href="#contact"
-            className="inline-block px-8 py-4 bg-white text-teal-600 rounded-lg hover:bg-slate-100 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl hover:transform hover:scale-105"
-          >
-            {t('portfolio_cta_button')}
-          </a>
-        </div>
+        <p className="text-center text-slate-500 text-sm mt-10">
+          {t('portfolio_more')}
+        </p>
       </div>
     </section>
   );
