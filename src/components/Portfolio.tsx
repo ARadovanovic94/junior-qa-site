@@ -82,6 +82,63 @@ function Portfolio() {
             </a>
           </article>
 
+
+          <article className="bg-slate-900/60 border border-slate-700 rounded-xl p-8 card-hover hover:border-teal-400/50 hover:shadow-2xl transition-all duration-300">
+            <div className="flex items-start justify-between gap-4 mb-6">
+              <div>
+                <p className="text-sm text-teal-400 font-semibold mb-2">{t('portfolio_api_type')}</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{t('portfolio_api_title')}</h3>
+                <p className="text-slate-400">{t('portfolio_api_app')}</p>
+              </div>
+              <span className="px-3 py-1 bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 rounded-full text-xs font-semibold">
+                {t('portfolio_completed')}
+              </span>
+            </div>
+
+            <p className="text-slate-300 leading-relaxed mb-6">
+              {t('portfolio_api_desc')}
+            </p>
+
+            <div className="grid grid-cols-3 gap-3 mb-6">
+              <div className="bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
+                <p className="text-2xl font-bold text-white">10</p>
+                <p className="text-xs text-slate-400">{t('portfolio_test_cases')}</p>
+              </div>
+              <div className="bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
+                <p className="text-2xl font-bold text-white">9</p>
+                <p className="text-xs text-slate-400">{t('portfolio_passed')}</p>
+              </div>
+              <div className="bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
+                <p className="text-2xl font-bold text-white">1</p>
+                <p className="text-xs text-slate-400">{t('portfolio_failed')}</p>
+              </div>
+            </div>
+
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-start gap-3 text-slate-300 text-sm">
+                <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={17} />
+                {t('portfolio_api_point_1')}
+              </li>
+              <li className="flex items-start gap-3 text-slate-300 text-sm">
+                <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={17} />
+                {t('portfolio_api_point_2')}
+              </li>
+              <li className="flex items-start gap-3 text-slate-300 text-sm">
+                <CheckCircle2 className="text-teal-400 flex-shrink-0 mt-0.5" size={17} />
+                {t('portfolio_api_point_3')}
+              </li>
+            </ul>
+
+            <a
+              href="https://github.com/ARadovanovic94/api_testing_practice"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 font-semibold"
+            >
+              <Github size={18} />
+              {t('portfolio_view_github')}
+            </a>
+          </article>
           <article className="bg-slate-900/60 border border-slate-700 rounded-xl p-8 card-hover hover:border-teal-400/50 hover:shadow-2xl transition-all duration-300">
             <div className="flex items-start justify-between gap-4 mb-6">
               <div>

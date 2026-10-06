@@ -13,6 +13,7 @@ Personal QA portfolio website built with React, TypeScript and Tailwind CSS.
 ## Featured projects
 
 - [Manual QA Practice](https://github.com/ARadovanovic94/manual_qa_practice)
+- [API Testing Practice](https://github.com/ARadovanovic94/api_testing_practice)
 - [Selenium Tests](https://github.com/ARadovanovic94/selenium-tests)
 
 Live site: https://aradovanovic.bolt.host/
