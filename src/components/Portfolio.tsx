@@ -43,16 +43,16 @@ function Portfolio() {
 
             <div className="grid grid-cols-3 gap-3 mb-6">
               <div className="bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
-                <p className="text-2xl font-bold text-white">8</p>
+                <p className="text-2xl font-bold text-white">13</p>
                 <p className="text-xs text-slate-400">{t('portfolio_test_cases')}</p>
               </div>
               <div className="bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
-                <p className="text-2xl font-bold text-white">8</p>
+                <p className="text-2xl font-bold text-white">13</p>
                 <p className="text-xs text-slate-400">{t('portfolio_passed')}</p>
               </div>
               <div className="bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
                 <p className="text-2xl font-bold text-white">0</p>
-                <p className="text-xs text-slate-400">{t('portfolio_defects')}</p>
+                <p className="text-xs text-slate-400">{t('portfolio_failed')}</p>
               </div>
             </div>
 
